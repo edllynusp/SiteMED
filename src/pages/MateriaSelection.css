@@ -1,0 +1,59 @@
+/* Estilo para MateriaSelection */
+body {
+  background-color: #121212; /* Fundo preto */
+  color: #ffffff; /* Texto branco */
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.materia-selection {
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+.materia-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 800px;
+}
+
+.materia-button {
+  background-color: #1e88e5; /* Azul moderno */
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 15px 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 260px; /* Tamanho igual para todos */
+  height: 60px; /* Altura padronizada */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra para dar elevação */
+}
+
+/* Efeito de hover */
+.materia-button:hover {
+  background-color: #1565c0; /* Azul mais escuro */
+  transform: translateY(-3px); /* Elevar o botão levemente */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4); /* Aumentar a sombra */
+}
+
+/* Efeito de clique */
+.materia-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
