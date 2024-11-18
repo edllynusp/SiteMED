@@ -13,7 +13,7 @@ function MateriaSelection() {
     "Reflexos",
     "Marchas",
     "Principais Síndromes Neurológicas",
-    "Avaliação Clínica da Dispnéia",
+    "Avaliação Clínica da Dispneia",
     "Abdominal",
     "Cardíaca",
     "Facies",

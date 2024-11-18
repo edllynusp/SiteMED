@@ -569,16 +569,7 @@ export const materiaData = {
           {
             id: 9,
             enunciado: "Descrevas quais são os ruídos hidroaéreos e seus significados",
-            resposta: (
-              <>
-                <strong>Ruidos hidroaéreos</strong>: OK.
-                <br />
-                <strong>Silencio abdominal</strong>: íleo paralitico; posoperatorio; infecção peritoneal; desequilíbrio hidroeletorlitico 
-                <br />
-                <strong>Sopros:  aneurisma</strong>:  compressões; fistulas arteriovenosas - pontos: aorta, a. renal, a. ilíaca, a. femoral
-                <br />
-              </>
-            ),
+            resposta: "Ruidos hidroaéreos: OK.<br/>Silencio abdominal: íleo paralítico; pós-operatório; infecção peritoneal; desequilíbrio hidroeletrolítico.<br/>Sopros (aneurisma): compressões; fístulas arteriovenosas - pontos: aorta, a. renal, a. ilíaca, a. femoral.",
             correta: true,
           },
           {

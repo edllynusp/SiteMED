@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'; 
-import { useParams, useNavigate } from 'react-router-dom'; 
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { materiaData } from '../data/materiaData.js';
 
 function QuizPage() {
   const { tema } = useParams();
   const navigate = useNavigate();
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState([]);
   const [questions, setQuestions] = useState([]);
@@ -20,6 +21,9 @@ function QuizPage() {
       (item) => item.nome.toLowerCase() === tema.toLowerCase()
     );
 
+    console.log('Tema:', tema);
+    console.log('TemaData:', temaData); // Verifique o conteúdo de temaData aqui
+
     if (temaData) {
       setQuestions(temaData.questoes);
       setLoading(false);
@@ -33,7 +37,7 @@ function QuizPage() {
     if (!answered) {
       setAcertos((prev) => prev + 1);
       registrarResposta(true);
-      setAnswered(true); 
+      setAnswered(true);
     }
   };
 
@@ -41,7 +45,7 @@ function QuizPage() {
     if (!answered) {
       setErros((prev) => prev + 1);
       registrarResposta(false);
-      setAnswered(true); 
+      setAnswered(true);
     }
   };
 
@@ -58,23 +62,22 @@ function QuizPage() {
   };
 
   const handleNext = () => {
-    if (answered) { 
+    if (answered) {
       if (currentQuestion + 1 < questions.length) {
         setCurrentQuestion(currentQuestion + 1);
-        setAnswered(false); 
+        setAnswered(false);
         setShowAnswer(false);
       } else {
-        // Aqui passamos apenas dados serializáveis
         navigate('/resultado', {
           state: {
-            acertos,     // Apenas números e dados simples
-            erros,       // Não passamos funções ou objetos complexos
-            answers: answers.map(answer => ({ 
-              question: answer.question, 
-              correctAnswer: answer.correctAnswer, 
-              correct: answer.correct 
-            })),  // Garantir que apenas dados simples sejam passados
-            tema,        // Passamos apenas strings simples
+            acertos,
+            erros,
+            answers: answers.map(answer => ({
+              question: answer.question,
+              correctAnswer: answer.correctAnswer,
+              correct: answer.correct
+            })),
+            tema,
           },
         });
       }
@@ -90,7 +93,7 @@ function QuizPage() {
   };
 
   const handleShowAnswer = () => {
-    setShowAnswer(true); 
+    setShowAnswer(true);
   };
 
   if (loading) {
